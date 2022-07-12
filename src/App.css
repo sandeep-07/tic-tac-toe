@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
+.App{
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo-img{
+  filter: brightness(50%);
+  position: fixed;
+  z-index: 1;
+}
+.box{
+  
+  background-color: #5A20CB;
+  width: 33.3%;
+  height: 150px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border: 1px dashed white;
+  background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
+  background-position: bottom;
+  background-size: 3px 1px;
+  background-repeat: repeat-x;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.outer-box{
+  width: 450px;
+  margin-left: 10px;
+  border-radius: 20px;
+  border: 1px dashed white;
+  padding: 15px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width:450px){
+  .box{
+    height: 100px;
+    width: 32%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  
+}
+
+img{
+  object-fit: cover;
+  height: 150px;
+  padding: 0!important;
+}
+
+.player{
+  width: 210px;
+  height: 270px;
+  opacity: 0.99;
+  transform: translateY(-50%);
+  border-radius: 70px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* border: 1px dashed white; */
+  flex-direction: column;
+}
+.active{
+  background-color: #834be4;
+}
+.userIcon{
+  position: relative;
+  bottom: 25%;
+  font-size:xx-large;
+}
+.gameComponent{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-start{
+  background-color: #F7CD2E !important;
+  color: #2011c8 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.2px !important;
+  font-size: 2rem !important;
+}
+
+.demo{
+  object-fit: contain;
+  width: 100%;
+  height: 50px;
+}
+
+p{
+  margin: 0;
+}
+
+input{
+  padding: 10px;
+  width:  95%;
+  margin-bottom: 10px;
+  border:  1px solid #d4d4d4;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+input:focus{
+  border:2px solid #834be4;
+  
+}
+
+
+.test{
+  transform: translateY(-5%);
 }

@@ -1,5 +1,19 @@
+
 body {
+  box-sizing: border-box;
   margin: 0;
+  background-color: #561fc4;
+  height: 100vh;
+  position: relative;
+
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.4)
+  ),
+url("./assets/background.png");
+  background-size:cover;
+  background-position: center;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
