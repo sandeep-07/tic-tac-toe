@@ -1,11 +1,8 @@
-.App{
 
-
-}
 .logo-img{
   filter: brightness(50%);
   position: fixed;
-  z-index: 1;
+  z-index: -1;
 }
 .box{
   
@@ -110,4 +107,20 @@ input:focus{
 
 .test{
   transform: translateY(-5%);
+}
+
+.game-buttons{
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-top:30px;
+
+}
+.btn-start{
+  margin-top: 30px;
+  font-size: 1.5rem !important;
 }

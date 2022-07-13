@@ -2,10 +2,22 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const ModalComp = ({oneName,toggle,twoName,openModal,setOneName_,setTwoName_,setNextLevel,currentLevel}) => {
+type PropTypes={
+  oneName:string 
+  twoName:string 
+  currentLevel:number
+  toggle:()=>void
+  openModal:boolean
+  setNextLevel: React.Dispatch<React.SetStateAction<number>>
+  setOneName_: React.Dispatch<React.SetStateAction<string>>
+  setTwoName_: React.Dispatch<React.SetStateAction<string>>
 
-    const handleChange=(e)=>{
-        setOneName_(e.target.value)
+}
+
+const ModalComp = ({oneName,toggle,twoName,openModal,setOneName_,setTwoName_,setNextLevel,currentLevel}:PropTypes) => {
+
+    const handleChange=(e:React.FormEvent<HTMLInputElement>)=>{
+        setOneName_((e.target as HTMLInputElement).value)
     }
 
     function proceed(){

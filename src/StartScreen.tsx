@@ -4,16 +4,25 @@ import ModalComp from "./ModalComp";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { toast } from "react-toastify";
 
+type PropTypes={
+  oneName_:string 
+  twoName_:string 
+  currLevel:number
+  nextLevel: React.Dispatch<React.SetStateAction<number>>
+  setOneName: React.Dispatch<React.SetStateAction<string>>
+  setTwoName: React.Dispatch<React.SetStateAction<string>>
 
-function StartScreen({oneName_,twoName_,setOneName,setTwoName,nextLevel,currLevel}) {
+}
+
+function StartScreen({oneName_,twoName_,setOneName,setTwoName,nextLevel,currLevel}:PropTypes) {
   const [openModal, setOpenModal] = useState(false)
 
   function toggle(){
     setOpenModal(!openModal)
   }
 
-  const handleChange=(e)=>{
-    setOneName(e.target.value)
+  const handleChange=(e:React.FormEvent<HTMLInputElement>)=>{
+    setOneName((e.target as HTMLInputElement).value)
 }
 
 function proceed(){
