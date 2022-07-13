@@ -4,8 +4,8 @@
   position: fixed;
   z-index: -1;
 }
-.box{
-  
+
+.box{  
   background-color: #5A20CB;
   width: 33.3%;
   height: 150px;
@@ -31,11 +31,35 @@
 
 @media only screen and (max-width:450px){
   .box{
-    height: 100px;
+    height: 80px;
     width: 32%;
+    flex-direction: column;
   }
-  
+  img{
+    height: 80px !important;
+  }
+  .game-buttons{
+    width: 50% !important;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .gameComponent{
+    margin-top: 25px;
+  }
 }
+@media only screen and (max-width:600px){
+  .custom-modal-style{
+    width: 80% !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media only screen and (max-width:900px){
+  .player{
+    visibility: hidden;
+  }
+}
+
 
 img{
   object-fit: cover;
@@ -44,6 +68,7 @@ img{
 }
 
 .player{
+  display: block;
   width: 210px;
   height: 270px;
   opacity: 0.99;
@@ -66,6 +91,9 @@ img{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .btn-start{
@@ -113,12 +141,10 @@ input:focus{
   margin-left: 50%;
   transform: translateX(-50%);
   width: 450px;
-  /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
   position: relative;
   padding-top:30px;
-
 }
 .btn-start{
   margin-top: 30px;

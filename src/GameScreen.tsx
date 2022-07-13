@@ -112,45 +112,46 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
     <div className="App">
       <img src={logo} className='logo-img game-btn' alt="logo" />
       {
-        winMessage.length>0 &&(
+        //SHOW reload and rematch buttons
+        winMessage.length>0 &&
+        (
           <div className='game-buttons'>
-        <button onClick={rematchGame} className='btn btn-start'>Rematch</button>
-        <button onClick={reloadGame} className='btn btn-start'>Reload</button>
-      </div>
-
+            <button onClick={rematchGame} className='btn btn-start'>Rematch</button>
+            <button onClick={reloadGame} className='btn btn-start'>Reload</button>
+          </div>
         )
       }
       
-   <div className='gameComponent d-flex align-items-center justify-content-around'>
-      {/* Left player deck */}
-      <div className={`${currentCharacter===0?"active":""} player d-flex justify-content-center align-items-center text-white`}>
-        <i className="userIcon fas fa-user-circle"></i>        
-        <h4>Player 1</h4>
-        <h2 className='fw-bolder'>{player1}</h2>
-        <img src={Cross} className='demo' alt='demo '/>
-      </div>
+      <div className='gameComponent'>
+        {/* Left player deck */}
+        <div className={`${currentCharacter===0?"active":""} player d-flex justify-content-center align-items-center text-white`}>
+          <i className="userIcon fas fa-user-circle"></i>        
+          <h4>Player 1</h4>
+          <h2 className='fw-bolder'>{player1}</h2>
+          <img src={Cross} className='demo' alt='demo '/>
+        </div>
 
-      {/* Centre game board */}
-      <div className='row row-cols-3 outer-box'>
-        {
-          boardArray.map((item,idx)=>{
+        {/* Centre game board */}
+        <div className='row row-cols-3 outer-box'>
+          {
+            boardArray.map((item,idx)=>{
 
-            if(item===0)
-            return <img key={idx} src={Cross} alt="cross pic" />;
-            else if(item===1)
-            return <img key={idx} src={Circle} alt="circle pic" />;
-            return <div key={idx} className='col box' onClick={()=>changeItem(idx)}>{``}</div>;
-        })
-        }
+              if(item===0)
+              return <img key={idx} src={Cross} alt="cross pic" />;
+              else if(item===1)
+              return <img key={idx} src={Circle} alt="circle pic" />;
+              return <div key={idx} className='col box' onClick={()=>changeItem(idx)}>{``}</div>;
+            })
+          }
         </div>
       
-      {/* Right game board */}
-      <div className={`${currentCharacter===1?"active":""} player d-flex justify-content-center align-items-center text-white`}>
-        <i className="userIcon fas fa-user-circle"></i>
-        <h4>Player 2</h4>
-        <h2 className='fw-bolder'>{player2}</h2>
-        <img src={Circle} className='demo' alt='demo '/>
-      </div>
+        {/* Right game board */}
+        <div className={`${currentCharacter===1?"active":""} player d-flex justify-content-center align-items-center text-white`}>
+          <i className="userIcon fas fa-user-circle"></i>
+          <h4>Player 2</h4>
+          <h2 className='fw-bolder'>{player2}</h2>
+          <img src={Circle} className='demo' alt='demo '/>
+        </div>
     </div>
   </div>
   );

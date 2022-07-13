@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react";
-import ModalComp from "./ModalComp";
-// import Modal from "./ModalComp";
+import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { toast } from "react-toastify";
 
 type PropTypes={
-  oneName_:string 
-  twoName_:string 
+  firstName:string 
+  secondName:string 
   currLevel:number
-  nextLevel: React.Dispatch<React.SetStateAction<number>>
-  setOneName: React.Dispatch<React.SetStateAction<string>>
-  setTwoName: React.Dispatch<React.SetStateAction<string>>
+  setCurrLevel: React.Dispatch<React.SetStateAction<number>>
+  setFirstName: React.Dispatch<React.SetStateAction<string>>
+  setSecondName: React.Dispatch<React.SetStateAction<string>>
 
 }
 
-function StartScreen({oneName_,twoName_,setOneName,setTwoName,nextLevel,currLevel}:PropTypes) {
+function StartScreen({firstName,secondName,setFirstName,setSecondName,setCurrLevel,currLevel}:PropTypes) {
   const [openModal, setOpenModal] = useState(false)
 
   function toggle(){
@@ -22,28 +20,29 @@ function StartScreen({oneName_,twoName_,setOneName,setTwoName,nextLevel,currLeve
   }
 
   const handleChange=(e:React.FormEvent<HTMLInputElement>)=>{
-    setOneName((e.target as HTMLInputElement).value)
+    setFirstName((e.target as HTMLInputElement).value)
 }
 
 function proceed(){
-  if(oneName_.length===0 || twoName_.length===0){
+  if(firstName.length===0 || secondName.length===0){
     return toast('Enter both players name to continue')
   }
-  nextLevel(currLevel+1)
+  setCurrLevel(currLevel+1)
 }
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 test" >
-      <Modal isOpen={openModal} toggle={toggle} 
+      <Modal isOpen={openModal} toggle={toggle } 
       aria-labelledby="contained-modal-title-vcenter"
+      className="custom-modal-style"
       centered>
-          <ModalHeader>Enter Players Namae</ModalHeader>
+          <ModalHeader>Enter Players Name</ModalHeader>
           <ModalBody>
             <p>Player 1</p>
             <input type="text" onChange={handleChange} />
             <br></br>
             <p>Player 2</p>
-            <input type="text" onChange={(e)=>setTwoName(e.target.value)}/></ModalBody>
+            <input type="text" onChange={(e)=>setSecondName(e.target.value)}/></ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={proceed}>Continue</Button>{' '}
           </ModalFooter>

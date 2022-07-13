@@ -4,13 +4,11 @@ body {
   margin: 0;
   background-color: #561fc4;
   height: 100vh;
-  position: relative;
-
   background:linear-gradient(
-    rgba(0, 0, 0, 0.4), 
-    rgba(0, 0, 0, 0.4)
+    rgba(0, 0, 0, 0.6), 
+    rgba(0, 0, 0, 0.6)
   ),
-url("./assets/background.png");
+url("./assets/image.jpg");
   background-size:cover;
   background-position: center;
   box-sizing: border-box;

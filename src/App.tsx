@@ -2,8 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Game from './Game';
-import StartScreen from './StartScreen';
+import Game from './GameScreen';
+import StartScreen from './screens/StartScreen';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const boardArray=new Array(9).fill("empty")
 
@@ -26,7 +26,7 @@ function App() {
         draggable
         pauseOnHover
       />
-      <StartScreen oneName_={player1Name} twoName_={player2Name} setOneName={setPlayer1Name} setTwoName={setPlayer2Name} currLevel={step} nextLevel={setStep}/>
+      <StartScreen firstName={player1Name} secondName={player2Name} setFirstName={setPlayer1Name} setSecondName={setPlayer2Name} currLevel={step} setCurrLevel={setStep}/>
     </>
     return <>
       <ToastContainer
