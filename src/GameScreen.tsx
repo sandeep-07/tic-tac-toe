@@ -3,6 +3,7 @@ import Cross from './assets/Cross.png'
 import Circle from './assets/Circle.png'
 import logo from './assets/logo.png'
 import { toast } from 'react-toastify';
+import Leaderboard from './Leaderboard';
 
 const boardArray=new Array(9).fill("empty")
 
@@ -15,12 +16,33 @@ type PropTypes={
 }
 
 function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
-  const [playerOneChance,setPlayerOneChance]=useState(true)
   const [currentCharacter, setCurrentCharacter] = useState(0)
   const [winMessage, setWinMessage] = useState("")
+
   const mapping=[player1,player2]
   
   // console.log(mapping.true)
+
+  useEffect(() => {
+    if(winMessage!=="")
+    {
+      let record:{player1:string,player2:string,result:string}=
+        {player1:player1,player2:player2,result:winMessage}
+
+      var xx=localStorage.getItem("records")
+      if(xx){
+        let res=JSON.parse(xx)
+        res.push(record)
+        localStorage.setItem("records",JSON.stringify(res))
+      }
+      else{
+        const arrayRec=[record]
+        localStorage.setItem("records",JSON.stringify(arrayRec))
+
+      }
+    }
+  }, [winMessage])
+  
   function reloadGame(){
     setCurrentCharacter(0)
     setWinMessage("")
@@ -153,6 +175,8 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
           <img src={Circle} className='demo' alt='demo '/>
         </div>
     </div>
+    
+    
   </div>
   );
 }

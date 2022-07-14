@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { toast } from "react-toastify";
+import Leaderboard from "../Leaderboard";
 
 type PropTypes={
   firstName:string 
@@ -14,6 +15,7 @@ type PropTypes={
 
 function StartScreen({firstName,secondName,setFirstName,setSecondName,setCurrLevel,currLevel}:PropTypes) {
   const [openModal, setOpenModal] = useState(false)
+  const [modal, setModal] = useState(false)
 
   function toggle(){
     setOpenModal(!openModal)
@@ -47,12 +49,15 @@ function proceed(){
             <Button color="primary" onClick={proceed}>Continue</Button>{' '}
           </ModalFooter>
         </Modal>
-      <a
-          className="btn btn-start p-4"
-          onClick={toggle}
-        >
-          Start Game
-        </a>
+        <div className="nextLine">
+          <button className="btn btn-start " onClick={toggle} >
+            Start Game
+          </button>
+          <button onClick={()=>setModal(!modal)} className="btn-start">
+            Leaderboard
+          </button>
+        </div>
+      <Leaderboard modalOpen={modal} changeModalState={setModal}/>
       {/* </div> */}
     </div>
   );

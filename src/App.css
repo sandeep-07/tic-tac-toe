@@ -46,6 +46,10 @@
   .gameComponent{
     margin-top: 25px;
   }
+  .btn-start{
+    padding: 12px !important;
+    font-size: 10px !important;
+  }
 }
 @media only screen and (max-width:600px){
   .custom-modal-style{
@@ -97,12 +101,15 @@ img{
 }
 
 .btn-start{
-  background-color: #F7CD2E !important;
+  background-color: #F7CD2E  !important;
   color: #2011c8 !important;
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 1.2px !important;
   font-size: 2rem !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+  border: none;
 }
 
 .demo{
@@ -149,4 +156,13 @@ input:focus{
 .btn-start{
   margin-top: 30px;
   font-size: 1.5rem !important;
+}
+
+.testPad{
+  padding: 20px !important;
+}
+
+.nextLine{
+  flex-direction: column;
+  display: flex;
 }

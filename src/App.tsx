@@ -5,13 +5,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import Game from './GameScreen';
 import StartScreen from './screens/StartScreen';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const boardArray=new Array(9).fill("empty")
+import ReactAudioPlayer from 'react-audio-player';
+import Leaderboard from './Leaderboard';
+
 
 function App() {
-
+  const song=require('./assets/song.mp3')
+  const music=require('./assets/music.mp3')
   const [step,setStep]=useState(0)
-  const [player1Name,setPlayer1Name]=useState("")
-  const [player2Name,setPlayer2Name]=useState("")
+  const [player1Name,setPlayer1Name]=useState("Sandeep ")
+  const [player2Name,setPlayer2Name]=useState("Sakshi")
 
     if(step==0)
     return <>
@@ -40,6 +43,12 @@ function App() {
           draggable
           pauseOnHover
         />
+        <audio
+        src={music}
+        autoPlay={true}
+        loop={true}
+        controls={false}
+      />
       <Game setPlayer1={setPlayer1Name} setPlayer2={setPlayer2Name} player1={player1Name} player2={player2Name} setLevel={setStep}/>
     </>
   }
