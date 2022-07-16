@@ -43,12 +43,12 @@
     justify-content: space-around;
     flex-direction: column;
   }
-  .gameComponent{
-    margin-top: 25px;
-  }
   .btn-start{
-    padding: 12px !important;
+    padding: 10px !important;
     font-size: 10px !important;
+  }
+  .gameComponent{
+    transform: translateY(-40%) !important;
   }
 }
 @media only screen and (max-width:600px){
@@ -106,10 +106,11 @@ img{
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 1.2px !important;
-  font-size: 2rem !important;
-  padding: 20px !important;
+  padding: 20px;
   border-radius: 10px !important;
   border: none;
+  margin-top: 30px;
+  font-size: 1.5rem !important;
 }
 
 .demo{
@@ -153,10 +154,7 @@ input:focus{
   position: relative;
   padding-top:30px;
 }
-.btn-start{
-  margin-top: 30px;
-  font-size: 1.5rem !important;
-}
+
 
 .testPad{
   padding: 20px !important;

@@ -3,7 +3,6 @@ import Cross from './assets/Cross.png'
 import Circle from './assets/Circle.png'
 import logo from './assets/logo.png'
 import { toast } from 'react-toastify';
-import Leaderboard from './Leaderboard';
 
 const boardArray=new Array(9).fill("empty")
 
@@ -41,7 +40,7 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
 
       }
     }
-  }, [winMessage])
+  }, [winMessage,player1,player2])
   
   function reloadGame(){
     setCurrentCharacter(0)
@@ -63,7 +62,7 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
       setCurrentCharacter(1-currentCharacter)
       toast(`${winMessage}`)
     }
-  }, [winMessage])
+  }, [winMessage,currentCharacter])
   
   function checkWinner(){
     
@@ -138,8 +137,8 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
         winMessage.length>0 &&
         (
           <div className='game-buttons'>
-            <button onClick={rematchGame} className='btn btn-start'>Rematch</button>
-            <button onClick={reloadGame} className='btn btn-start'>Reload</button>
+            <button onClick={rematchGame} className=' btn-start'>Rematch</button>
+            <button onClick={reloadGame} className=' btn-start'>Reload</button>
           </div>
         )
       }
