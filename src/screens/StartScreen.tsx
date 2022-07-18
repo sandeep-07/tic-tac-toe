@@ -50,7 +50,7 @@ function proceed(){
           </ModalFooter>
         </Modal>
         <div className="nextLine">
-          <button className="btn btn-start " onClick={toggle} >
+          <button className="btn-start " onClick={toggle} >
             Start Game
           </button>
           <button onClick={()=>setModal(!modal)} className="btn-start">
