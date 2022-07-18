@@ -19,8 +19,6 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
   const [winMessage, setWinMessage] = useState("")
 
   const mapping=[player1,player2]
-  
-  // console.log(mapping.true)
 
   useEffect(() => {
     if(winMessage!=="")
@@ -40,7 +38,7 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
 
       }
     }
-  }, [winMessage,player1,player2])
+  }, [winMessage])
   
   function reloadGame(){
     setCurrentCharacter(0)
@@ -62,7 +60,7 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
       setCurrentCharacter(1-currentCharacter)
       toast(`${winMessage}`)
     }
-  }, [winMessage,currentCharacter])
+  }, [winMessage])
   
   function checkWinner(){
     
@@ -156,7 +154,6 @@ function Game({player1,player2,setPlayer1,setPlayer2,setLevel}:PropTypes) {
         <div className='row row-cols-3 outer-box'>
           {
             boardArray.map((item,idx)=>{
-
               if(item===0)
               return <img key={idx} src={Cross} alt="cross pic" />;
               else if(item===1)
