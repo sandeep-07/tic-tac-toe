@@ -70,9 +70,6 @@ p{
   
 }
 
-
-
-
 .player{
  
   width: 210px;
@@ -146,12 +143,12 @@ p{
 @media only screen and (max-width:600px){
 
   .box{
-    height: 85px;
+    height: 75px;
     width: 33.3%;
     flex-direction: column;
   }
   .box-img{
-    height: 85px !important;
+    height: 75px !important;
   }
   .game-buttons{
     width: 50% !important;
